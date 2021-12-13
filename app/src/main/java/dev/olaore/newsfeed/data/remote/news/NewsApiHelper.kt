@@ -1,6 +1,6 @@
 package dev.olaore.newsfeed.data.remote.news
 
-import dev.olaore.newsfeed.data.models.newslist.NewsListContainer
+import dev.olaore.newsfeed.data.models.newslist.remote.NewsListContainer
 import dev.olaore.newsfeed.data.remote.NewsService
 import javax.inject.Inject
 

@@ -8,7 +8,8 @@ import dagger.hilt.android.lifecycle.HiltViewModel
 import dev.olaore.newsfeed.data.common.mappers.toDomainNewsList
 import dev.olaore.newsfeed.ui.newslist.repositories.NewsListRepository
 import dev.olaore.newsfeed.data.common.models.Result
-import dev.olaore.newsfeed.data.models.newslist.NewsItem
+import dev.olaore.newsfeed.data.models.newslist.domain.DomainNewsItem
+import dev.olaore.newsfeed.data.models.newslist.remote.NewsItem
 import kotlinx.coroutines.launch
 import java.lang.Exception
 import javax.inject.Inject
@@ -18,8 +19,8 @@ class NewsListViewModel @Inject constructor(
     private val newsListRepository: NewsListRepository
 ) : ViewModel() {
 
-    private var _topHeadlines = MutableLiveData<Result<List<NewsItem>>>()
-    val topHeadlines: LiveData<Result<List<NewsItem>>>
+    private var _topHeadlines = MutableLiveData<Result<List<DomainNewsItem>>>()
+    val topHeadlines: LiveData<Result<List<DomainNewsItem>>>
         get() = _topHeadlines
 
     fun getTopHeadlines() {
@@ -29,7 +30,7 @@ class NewsListViewModel @Inject constructor(
                 val newsListContainer = newsListRepository.getTopHeadlines()
                 _topHeadlines.postValue(Result.Success(newsListContainer.toDomainNewsList()))
             } catch(ex: Exception) {
-                _topHeadlines.postValue(Result.Error(ex.message!!))
+                _topHeadlines.postValue(Result.Error(ex.message ?: ""))
             }
         }
     }

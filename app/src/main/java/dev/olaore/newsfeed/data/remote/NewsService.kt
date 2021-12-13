@@ -1,6 +1,6 @@
 package dev.olaore.newsfeed.data.remote
 
-import dev.olaore.newsfeed.data.models.newslist.NewsListContainer
+import dev.olaore.newsfeed.data.models.newslist.remote.NewsListContainer
 import dev.olaore.newsfeed.util.Constants
 import okhttp3.Interceptor
 import okhttp3.Response

@@ -1,4 +1,5 @@
-package dev.olaore.newsfeed.data.models.newslist
+package dev.olaore.newsfeed.data.models.newslist.remote
+
 
 data class NewsListContainer(
     val status: String,
