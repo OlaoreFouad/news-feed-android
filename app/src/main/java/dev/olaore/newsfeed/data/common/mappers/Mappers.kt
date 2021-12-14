@@ -10,9 +10,9 @@ fun NewsListContainer.toDomainNewsList(): List<DomainNewsItem> {
 
 fun NewsItem.toDomainNewsItem(): DomainNewsItem {
     return DomainNewsItem(
-        this.title!!,
+        this.title ?: "No Title Provided",
         this.author ?: "No Author Provided",
-        this.url!!,
-        this.urlToImage!!
+        this.url ?: "",
+        this.urlToImage ?: ""
     )
 }

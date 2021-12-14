@@ -8,6 +8,7 @@ import dev.olaore.newsfeed.R
 import dev.olaore.newsfeed.data.models.newslist.domain.DomainNewsItem
 import dev.olaore.newsfeed.data.models.newslist.remote.NewsItem
 import dev.olaore.newsfeed.databinding.ItemNewsBinding
+import dev.olaore.newsfeed.util.launchInBrowser
 
 class NewsItemAdapter(
     private val items: List<DomainNewsItem>
@@ -31,9 +32,10 @@ class NewsItemAdapter(
         fun bind(item: DomainNewsItem) {
 
             binding.newsItem = item;
-//            binding.newsImage.setBackgroundResource(R.color.colorTransluscentBlack)
             binding.root.setOnClickListener {
-                // do something.
+                if (item.url.isNotEmpty()) {
+                    item.url.launchInBrowser(itemView.context)
+                }
             }
         }
 
