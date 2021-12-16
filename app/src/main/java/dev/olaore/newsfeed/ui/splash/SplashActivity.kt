@@ -5,8 +5,8 @@ import android.content.Intent
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
 import android.os.Handler
-import dev.olaore.newsfeed.MainActivity
 import dev.olaore.newsfeed.R
+import dev.olaore.newsfeed.ui.newslist.NewsListActivity
 
 @SuppressLint("CustomSplashScreen")
 class SplashActivity : AppCompatActivity() {
@@ -22,7 +22,7 @@ class SplashActivity : AppCompatActivity() {
 
     private fun openMainApplication() {
         startActivity(Intent(
-            this, MainActivity::class.java
+            this, NewsListActivity::class.java
         ))
     }
 

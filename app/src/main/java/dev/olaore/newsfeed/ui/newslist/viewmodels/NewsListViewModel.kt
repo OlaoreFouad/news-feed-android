@@ -23,7 +23,11 @@ class NewsListViewModel @Inject constructor(
     val topHeadlines: LiveData<Result<List<DomainNewsItem>>>
         get() = _topHeadlines
 
-    fun getTopHeadlines() {
+    init {
+        getTopHeadlines()
+    }
+
+    private fun getTopHeadlines() {
         _topHeadlines.postValue(Result.Loading())
         viewModelScope.launch {
             try {
