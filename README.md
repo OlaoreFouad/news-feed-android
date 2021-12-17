@@ -1,4 +1,4 @@
-## Card Info Finder (Summary)
+## News Feed Android App (Summary)
 
 This app works as an app that shows the recent news headlines gotten from an api.
 
@@ -8,7 +8,7 @@ This project makes use of the following technologies:
 
 1. MVVM (Model-View-ViewModel) Architecture
 2. Kotlin Coroutines for background operations.
-3. Dagger Hilt for injection globally-required dependencies.
+3. Dagger Hilt for injecting required dependencies.
 4. Retrofit for Network requests.
 5. Jetpack Navigation Components for Navigation.
 6. JUnit/Mockito for unit tests.
