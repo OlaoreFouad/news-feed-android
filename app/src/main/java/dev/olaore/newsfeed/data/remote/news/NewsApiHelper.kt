@@ -4,7 +4,7 @@ import dev.olaore.newsfeed.data.models.newslist.remote.NewsListContainer
 import dev.olaore.newsfeed.data.remote.NewsService
 import javax.inject.Inject
 
-class NewsApiHelper @Inject constructor (
+open class NewsApiHelper @Inject constructor (
     private val newsService: NewsService
 ) {
 
